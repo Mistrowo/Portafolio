@@ -1,14 +1,18 @@
 /* ============================================
    ALEX PARADA - PORTFOLIO STYLES
-   Modern Developer Portfolio with Tech Aesthetic
+   Modern Developer Portfolio with Dark/Light Mode
    ============================================ */
 
-/* Google Fonts - Distinctive Typography */
+/* Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
-/* CSS Custom Properties */
+/* ==========================================
+   THEME VARIABLES
+   ========================================== */
+
+/* Dark Theme (Default) */
 :root {
-  /* Color Palette - Cyber Night Theme */
+  /* Background Colors */
   --color-bg-primary: #0a0a0f;
   --color-bg-secondary: #12121a;
   --color-bg-tertiary: #1a1a24;
@@ -31,6 +35,11 @@
   --glow-primary: 0 0 40px rgba(0, 212, 255, 0.15);
   --glow-accent: 0 0 60px rgba(124, 58, 237, 0.2);
   
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.3);
+  
   /* Typography */
   --font-heading: 'Sora', sans-serif;
   --font-body: 'Sora', sans-serif;
@@ -44,9 +53,51 @@
   --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-smooth: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-bounce: 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  
+  /* Theme indicator */
+  --theme-icon-sun: 0;
+  --theme-icon-moon: 1;
 }
 
-/* Reset & Base */
+/* Light Theme */
+[data-theme="light"] {
+  /* Background Colors */
+  --color-bg-primary: #ffffff;
+  --color-bg-secondary: #f8fafc;
+  --color-bg-tertiary: #f1f5f9;
+  --color-bg-card: rgba(255, 255, 255, 0.8);
+  
+  /* Accent Colors - Slightly adjusted for light mode */
+  --color-accent-primary: #0891b2;
+  --color-accent-secondary: #7c3aed;
+  --color-accent-tertiary: #059669;
+  --color-accent-gradient: linear-gradient(135deg, #0891b2 0%, #7c3aed 50%, #059669 100%);
+  
+  /* Text Colors */
+  --color-text-primary: #0f172a;
+  --color-text-secondary: #475569;
+  --color-text-muted: #64748b;
+  
+  /* Borders & Effects */
+  --color-border: rgba(0, 0, 0, 0.08);
+  --color-border-hover: rgba(8, 145, 178, 0.3);
+  --glow-primary: 0 0 40px rgba(8, 145, 178, 0.1);
+  --glow-accent: 0 0 60px rgba(124, 58, 237, 0.1);
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  
+  /* Theme indicator */
+  --theme-icon-sun: 1;
+  --theme-icon-moon: 0;
+}
+
+/* ==========================================
+   RESET & BASE
+   ========================================== */
+
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -67,6 +118,7 @@ body {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background-color var(--transition-smooth), color var(--transition-smooth);
 }
 
 /* Background Grid Pattern */
@@ -78,25 +130,12 @@ body::before {
   width: 100%;
   height: 100%;
   background-image: 
-    linear-gradient(rgba(0, 212, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 212, 255, 0.03) 1px, transparent 1px);
+    linear-gradient(var(--color-border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-border) 1px, transparent 1px);
   background-size: 60px 60px;
   pointer-events: none;
   z-index: -1;
-}
-
-/* Noise Texture Overlay */
-body::after {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-  opacity: 0.03;
-  pointer-events: none;
-  z-index: -1;
+  opacity: 0.5;
 }
 
 /* Selection */
@@ -105,12 +144,16 @@ body::after {
   color: var(--color-bg-primary);
 }
 
-/* Typography */
+/* ==========================================
+   TYPOGRAPHY
+   ========================================== */
+
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
   font-weight: 600;
   line-height: 1.2;
   letter-spacing: -0.02em;
+  color: var(--color-text-primary);
 }
 
 h1 {
@@ -135,14 +178,16 @@ a {
   text-decoration: none;
 }
 
-/* Container */
+/* ==========================================
+   LAYOUT
+   ========================================== */
+
 .container {
   max-width: var(--container-max);
   margin: 0 auto;
   padding: 0 clamp(1.5rem, 5vw, 3rem);
 }
 
-/* Section */
 .section {
   padding: var(--section-padding) 0;
   position: relative;
@@ -181,6 +226,10 @@ a {
   background-clip: text;
 }
 
+/* ==========================================
+   COMPONENTS
+   ========================================== */
+
 /* Buttons */
 .btn {
   display: inline-flex;
@@ -199,7 +248,7 @@ a {
 
 .btn-primary {
   background: var(--color-accent-gradient);
-  color: var(--color-bg-primary);
+  color: white;
   box-shadow: var(--glow-primary);
 }
 
@@ -235,7 +284,10 @@ a {
   box-shadow: var(--glow-primary);
 }
 
-/* Animations */
+/* ==========================================
+   ANIMATIONS
+   ========================================== */
+
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -258,10 +310,10 @@ a {
 
 @keyframes pulse-glow {
   0%, 100% {
-    box-shadow: var(--glow-primary);
+    box-shadow: 0 0 10px var(--color-accent-tertiary);
   }
   50% {
-    box-shadow: 0 0 60px rgba(0, 212, 255, 0.3);
+    box-shadow: 0 0 20px var(--color-accent-tertiary);
   }
 }
 
@@ -288,7 +340,10 @@ a {
 .animate-delay-4 { animation-delay: 0.4s; }
 .animate-delay-5 { animation-delay: 0.5s; }
 
-/* Scrollbar */
+/* ==========================================
+   SCROLLBAR
+   ========================================== */
+
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -306,7 +361,10 @@ a {
   background: var(--color-accent-primary);
 }
 
-/* Media Queries */
+/* ==========================================
+   MEDIA QUERIES
+   ========================================== */
+
 @media (max-width: 768px) {
   :root {
     --section-padding: clamp(3rem, 8vw, 5rem);
@@ -315,4 +373,26 @@ a {
   .section-header {
     margin-bottom: 2.5rem;
   }
+}
+
+/* ==========================================
+   THEME TRANSITION
+   ========================================== */
+
+body,
+.header,
+.card,
+.nav-link,
+.btn,
+.contact-link,
+.project-card,
+.skill-card,
+.highlight,
+.tag,
+.timeline-card {
+  transition: 
+    background-color var(--transition-smooth),
+    border-color var(--transition-smooth),
+    color var(--transition-smooth),
+    box-shadow var(--transition-smooth);
 }

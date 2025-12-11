@@ -1,0 +1,461 @@
+---
+const experiences = [
+  {
+    title: 'Desarrollador Full Stack',
+    company: 'OHFFICE',
+    location: 'Santiago, Chile',
+    period: '2023 - Presente',
+    type: 'Profesional',
+    description: 'Desarrollo y mantenimiento de sistemas empresariales para la gestión de producción y automatización de procesos.',
+    responsibilities: [
+      'Automatización de procesos empresariales',
+      'Desarrollo del Customizador de productos',
+      'Generacion de ordenes de producción',
+      'Migración de plataforma y actualización de versiones',
+      'Testing y control de calidad',
+      'Integración de APIs de terceros',
+      'Desarrollo y mantenimiento del sitio web'
+    ],
+    skills: ['Laravel', 'NestJS', 'React', 'Vue.js', 'PostgreSQL', 'Docker', 'APIs REST'],
+    icon: 'building',
+    links: []
+  },
+  {
+    title: 'Desarrollador Full Stack',
+    company: 'GETBACK',
+    location: 'Santiago, Chile',
+    period: '2022 - 2023',
+    type: 'Profesional',
+    description: 'Apoyo en el desarrollo de sistema empresarial permitiendo la gestión eficiente de productos en base a la logística inversa, además apoye en el área de testing y despliegue de aplicaciones.',
+    responsibilities: [
+      'Desarrollo de sistemas de gestión empresarial',
+      'Implementación de APIs RESTful',
+      'Integración de servicios de terceros',
+      'Mantenimiento y optimización de aplicaciones',
+      'Colaboración en pruebas y despliegue de software',
+      'Documentación técnica'
+    ],
+    skills: ['NestJS', 'React', 'PostgreSQL', 'Docker'],
+    icon: 'code',
+    links: []
+  },
+  {
+    title: 'Ayudante de Probabilidades',
+    company: 'Universidad Diego Portales',
+    location: 'Santiago, Chile',
+    period: '2022 - 2023',
+    type: 'Académico',
+    description: 'Apoyo en la enseñanza del curso de Probabilidades y Estadística para estudiantes de Ingeniería. Responsable de resolver dudas, preparar material de apoyo y evaluar trabajos prácticos.',
+    responsibilities: [
+      'Preparación de ayudantías semanales',
+      'Resolución de ejercicios y dudas de estudiantes',
+      'Corrección de pruebas y tareas',
+      'Apoyo en la preparación de evaluaciones'
+    ],
+    skills: ['Comunicación', 'Liderazgo', 'Probabilidades', 'Estadística', 'LaTeX'],
+    icon: 'academic',
+    links: []
+  },
+  {
+    title: 'Desarrollador Freelance',
+    company: 'Proyectos Independientes',
+    location: 'Santiago, Chile',
+    period: '2023 - Presente',
+    type: 'Freelance',
+    description: 'Desarrollo de soluciones web personalizadas para diversos clientes. Especializado en landing pages, sistemas de gestión y aplicaciones web modernas con enfoque en UX/UI.',
+    responsibilities: [
+      'Desarrollo de landing pages profesionales',
+      'Sistemas de organización de pedidos',
+      'Diseño e implementación de interfaces modernas',
+      'Optimización SEO y rendimiento web',
+      'Despliegue y mantenimiento en la nube'
+    ],
+    skills: ['Astro', 'React', 'Next.js', 'Tailwind CSS', 'Vercel', 'SEO'],
+    icon: 'freelance',
+   
+  }
+];
+
+const icons: Record<string, string> = {
+  building: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/></svg>`,
+  code: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>`,
+  academic: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>`,
+  freelance: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/></svg>`
+};
+---
+
+<section id="experiencia" class="experience section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Experiencia</span>
+      <h2 class="section-title">
+        Mi <span class="gradient-text">Trayectoria</span>
+      </h2>
+      <p class="section-description">
+        Experiencia académica y profesional que ha formado mis habilidades
+      </p>
+    </div>
+    
+    <div class="timeline">
+      {experiences.map((exp, index) => (
+        <div class="timeline-item" style={`--delay: ${index * 0.15}s`}>
+          <div class="timeline-marker">
+            <div class="timeline-icon" set:html={icons[exp.icon]} />
+          </div>
+          
+          <div class="timeline-card card">
+            <div class="timeline-header">
+              <div class="timeline-badge" data-type={exp.type.toLowerCase()}>
+                {exp.type}
+              </div>
+              <span class="timeline-period">{exp.period}</span>
+            </div>
+            
+            <h3 class="timeline-title">{exp.title}</h3>
+            
+            <div class="timeline-company">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 21h18"/>
+                <path d="M5 21V7l8-4v18"/>
+                <path d="M19 21V11l-6-4"/>
+                <path d="M9 9v.01"/>
+                <path d="M9 12v.01"/>
+                <path d="M9 15v.01"/>
+                <path d="M9 18v.01"/>
+              </svg>
+              <span>{exp.company}</span>
+              <span class="separator">•</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+              <span>{exp.location}</span>
+            </div>
+            
+            <p class="timeline-description">{exp.description}</p>
+            
+            <div class="timeline-responsibilities">
+              <h4>Responsabilidades:</h4>
+              <ul>
+                {exp.responsibilities.map((resp) => (
+                  <li>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <polyline points="20 6 9 17 4 12"/>
+                    </svg>
+                    {resp}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            
+            <div class="timeline-skills">
+              {exp.skills.map((skill) => (
+                <span class="skill-tag">{skill}</span>
+              ))}
+            </div>
+            
+          
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .experience {
+    background: var(--color-bg-secondary);
+    position: relative;
+  }
+  
+  .experience::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--color-border), transparent);
+  }
+  
+  .timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 28px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(
+      to bottom,
+      var(--color-accent-primary),
+      var(--color-accent-secondary),
+      var(--color-accent-tertiary),
+      var(--color-accent-primary)
+    );
+    border-radius: 1px;
+  }
+  
+  .timeline-item {
+    position: relative;
+    padding-left: 80px;
+    padding-bottom: 3rem;
+    animation: fadeInUp 0.6s ease forwards;
+    animation-delay: var(--delay, 0s);
+    opacity: 0;
+  }
+  
+  .timeline-item:last-child {
+    padding-bottom: 0;
+  }
+  
+  .timeline-marker {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 58px;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-bg-primary);
+    border: 2px solid var(--color-accent-primary);
+    border-radius: 50%;
+    z-index: 1;
+    transition: all var(--transition-fast);
+  }
+  
+  .timeline-item:hover .timeline-marker {
+    border-color: var(--color-accent-secondary);
+    box-shadow: 0 0 20px rgba(124, 58, 237, 0.3);
+  }
+  
+  .timeline-icon {
+    color: var(--color-accent-primary);
+    transition: color var(--transition-fast);
+  }
+  
+  .timeline-item:hover .timeline-icon {
+    color: var(--color-accent-secondary);
+  }
+  
+  .timeline-card {
+    position: relative;
+  }
+  
+  .timeline-card::before {
+    content: '';
+    position: absolute;
+    left: -22px;
+    top: 20px;
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-right-color: var(--color-border);
+  }
+  
+  .timeline-card::after {
+    content: '';
+    position: absolute;
+    left: -20px;
+    top: 21px;
+    width: 0;
+    height: 0;
+    border: 9px solid transparent;
+    border-right-color: var(--color-bg-card);
+  }
+  
+  .timeline-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  .timeline-badge {
+    padding: 0.25rem 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-radius: 50px;
+  }
+  
+  .timeline-badge[data-type="académico"] {
+    background: rgba(124, 58, 237, 0.15);
+    color: var(--color-accent-secondary);
+    border: 1px solid rgba(124, 58, 237, 0.3);
+  }
+  
+  .timeline-badge[data-type="profesional"] {
+    background: rgba(16, 185, 129, 0.15);
+    color: var(--color-accent-tertiary);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+  }
+  
+  .timeline-badge[data-type="freelance"] {
+    background: rgba(0, 212, 255, 0.15);
+    color: var(--color-accent-primary);
+    border: 1px solid rgba(0, 212, 255, 0.3);
+  }
+  
+  .timeline-period {
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+  }
+  
+  .timeline-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    margin-bottom: 0.5rem;
+  }
+  
+  .timeline-company {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9375rem;
+    color: var(--color-text-muted);
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .timeline-company svg {
+    color: var(--color-accent-primary);
+    flex-shrink: 0;
+  }
+  
+  .separator {
+    color: var(--color-border);
+  }
+  
+  .timeline-description {
+    color: var(--color-text-secondary);
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+  }
+  
+  .timeline-responsibilities {
+    margin-bottom: 1.5rem;
+  }
+  
+  .timeline-responsibilities h4 {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  
+  .timeline-responsibilities ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .timeline-responsibilities li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    font-size: 0.9375rem;
+    color: var(--color-text-secondary);
+  }
+  
+  .timeline-responsibilities li svg {
+    color: var(--color-accent-tertiary);
+    flex-shrink: 0;
+    margin-top: 0.125rem;
+  }
+  
+  .timeline-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .skill-tag {
+    padding: 0.25rem 0.75rem;
+    background: var(--color-bg-tertiary);
+    border-radius: 50px;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--color-text-secondary);
+    transition: all var(--transition-fast);
+  }
+  
+  .skill-tag:hover {
+    color: var(--color-accent-primary);
+    background: rgba(0, 212, 255, 0.1);
+  }
+  
+  .timeline-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid var(--color-border);
+  }
+  
+  .timeline-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-accent-primary);
+    transition: all var(--transition-fast);
+  }
+  
+  .timeline-link:hover {
+    color: var(--color-accent-secondary);
+  }
+  
+  .timeline-link svg {
+    transition: transform var(--transition-fast);
+  }
+  
+  .timeline-link:hover svg {
+    transform: translate(2px, -2px);
+  }
+  
+  @media (max-width: 768px) {
+    .timeline::before {
+      left: 20px;
+    }
+    
+    .timeline-item {
+      padding-left: 60px;
+    }
+    
+    .timeline-marker {
+      width: 42px;
+      height: 42px;
+    }
+    
+    .timeline-icon svg {
+      width: 20px;
+      height: 20px;
+    }
+    
+    .timeline-card::before,
+    .timeline-card::after {
+      display: none;
+    }
+    
+    .timeline-title {
+      font-size: 1.25rem;
+    }
+  }
+</style>
