@@ -1,12 +1,12 @@
 ---
 const showPhoto = true;
-const photoUrl = '/foto.jpg'; 
+const photoUrl = '/foto.jpg';
 ---
 
 <section id="sobre-mi" class="about section">
   <div class="container">
     <div class="about-grid">
-      <div class="about-image-wrapper">
+      <div class="about-image-wrapper" data-animate="fade-right">
         <div class="about-image">
           <div class="about-avatar">
             {showPhoto ? (
@@ -15,24 +15,26 @@ const photoUrl = '/foto.jpg';
               <span class="avatar-initials">AP</span>
             )}
           </div>
+          <div class="about-decoration"></div>
         </div>
         
-       
-        
-        <div class="about-floating-card card-2">
+        <div class="about-floating-card card-1">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+            <polyline points="22,4 12,14.01 9,11.01"/>
           </svg>
         </div>
+        
+      
       </div>
       
       <div class="about-content">
-        <span class="section-label">Sobre Mí</span>
-        <h2 class="section-title">
+        <span class="section-label" data-animate="fade-up">Sobre Mí</span>
+        <h2 class="section-title" data-animate="fade-up" data-delay="100">
           Transformando ideas en <span class="gradient-text">código</span>
         </h2>
         
-        <div class="about-text">
+        <div class="about-text" data-animate="fade-up" data-delay="200">
           <p>
             Soy <strong>Ingeniero en Informática y Telecomunicaciones</strong> titulado de la 
             <strong>Universidad Diego Portales</strong>, ubicado en Santiago, Chile. 
@@ -55,7 +57,7 @@ const photoUrl = '/foto.jpg';
         </div>
         
         <div class="about-highlights">
-          <div class="highlight">
+          <div class="highlight" data-animate="fade-up" data-delay="300">
             <div class="highlight-icon">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M12 2L2 7l10 5 10-5-10-5z"/>
@@ -69,7 +71,7 @@ const photoUrl = '/foto.jpg';
             </div>
           </div>
           
-          <div class="highlight">
+          <div class="highlight" data-animate="fade-up" data-delay="400">
             <div class="highlight-icon">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M12 4.5a2.5 2.5 0 0 0-4.96-.46 2.5 2.5 0 0 0-1.98 3 2.5 2.5 0 0 0-1.32 4.24 3 3 0 0 0 .34 5.58 2.5 2.5 0 0 0 2.96 3.08A2.5 2.5 0 0 0 12 19.5"/>
@@ -82,7 +84,7 @@ const photoUrl = '/foto.jpg';
             </div>
           </div>
           
-          <div class="highlight">
+          <div class="highlight" data-animate="fade-up" data-delay="500">
             <div class="highlight-icon">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
@@ -97,17 +99,19 @@ const photoUrl = '/foto.jpg';
           </div>
         </div>
         
-        <a 
-          href="https://www.linkedin.com/in/alex-parada-0a4069213/" 
-          target="_blank" 
-          rel="noopener noreferrer" 
-          class="btn btn-primary"
-        >
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-          </svg>
-          Ver LinkedIn
-        </a>
+        <div data-animate="fade-up" data-delay="600">
+          <a 
+            href="https://www.linkedin.com/in/alex-parada-0a4069213/" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="btn btn-primary"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+            Ver LinkedIn
+          </a>
+        </div>
       </div>
     </div>
   </div>
@@ -168,7 +172,6 @@ const photoUrl = '/foto.jpg';
     opacity: 0.05;
   }
   
-  /* Estilos para la foto */
   .avatar-photo {
     width: 100%;
     height: 100%;
@@ -287,6 +290,7 @@ const photoUrl = '/foto.jpg';
   .highlight:hover {
     border-color: var(--color-border-hover);
     background: rgba(0, 212, 255, 0.05);
+    transform: translateX(5px);
   }
   
   .highlight-icon {

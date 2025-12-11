@@ -1,163 +1,150 @@
 ---
 const experiences = [
   {
-    title: 'Desarrollador Full Stack',
+    period: '2023 - Presente',
+    role: 'Desarrollador Full Stack',
     company: 'OHFFICE',
     location: 'Santiago, Chile',
-    period: '2023 - Presente',
     type: 'Profesional',
-    description: 'Desarrollo y mantenimiento de sistemas empresariales para la gestión de producción y automatización de procesos.',
+    description: 'Desarrollo y mantenimiento de sistemas empresariales para gestión de producción y ventas.',
     responsibilities: [
       'Automatización de procesos empresariales',
       'Desarrollo del Customizador de productos',
-      'Generacion de ordenes de producción',
-      'Migración de plataforma y actualización de versiones',
-      'Testing y control de calidad',
-      'Integración de APIs de terceros',
-      'Desarrollo y mantenimiento del sitio web'
+      'Generación de reportes dinámicos',
+      'Migración de plataforma y versiones',
+      'Testing e integración de APIs',
+      'Desarrollo sitio web corporativo'
     ],
-    skills: ['Laravel', 'NestJS', 'React', 'Vue.js', 'PostgreSQL', 'Docker', 'APIs REST'],
-    icon: 'building',
-    links: []
+    skills: ['Laravel', 'NestJS', 'React', 'Vue.js', 'PostgreSQL', 'Docker'],
+    links: [
+    ]
   },
   {
-    title: 'Desarrollador Full Stack',
+    period: '2022 - 2023',
+    role: 'Desarrollador Full Stack',
     company: 'GETBACK',
     location: 'Santiago, Chile',
-    period: '2022 - 2023',
     type: 'Profesional',
-    description: 'Apoyo en el desarrollo de sistema empresarial permitiendo la gestión eficiente de productos en base a la logística inversa, además apoye en el área de testing y despliegue de aplicaciones.',
+    description: 'Desarrollo de sistema de gestión para logística inversa y reciclaje.',
     responsibilities: [
-      'Desarrollo de sistemas de gestión empresarial',
-      'Implementación de APIs RESTful',
-      'Integración de servicios de terceros',
-      'Mantenimiento y optimización de aplicaciones',
-      'Colaboración en pruebas y despliegue de software',
-      'Documentación técnica'
+      'Sistema de gestión logística inversa',
+      'Desarrollo de APIs RESTful',
+      'Implementación de testing',
+      'Despliegue y mantenimiento'
     ],
     skills: ['NestJS', 'React', 'PostgreSQL', 'Docker'],
-    icon: 'code',
     links: []
   },
   {
-    title: 'Ayudante de Probabilidades',
+    period: '2022 - 2023',
+    role: 'Ayudante de Probabilidades',
     company: 'Universidad Diego Portales',
     location: 'Santiago, Chile',
-    period: '2022 - 2023',
     type: 'Académico',
-    description: 'Apoyo en la enseñanza del curso de Probabilidades y Estadística para estudiantes de Ingeniería. Responsable de resolver dudas, preparar material de apoyo y evaluar trabajos prácticos.',
+    description: 'Apoyo académico en el curso de Probabilidades y Estadística.',
     responsibilities: [
       'Preparación de ayudantías semanales',
-      'Resolución de ejercicios y dudas de estudiantes',
+      'Resolución de ejercicios prácticos',
       'Corrección de pruebas y tareas',
-      'Apoyo en la preparación de evaluaciones'
+      'Atención de consultas estudiantiles'
     ],
-    skills: ['Comunicación', 'Liderazgo', 'Probabilidades', 'Estadística', 'LaTeX'],
-    icon: 'academic',
+    skills: ['Comunicación', 'Liderazgo', 'LaTeX', 'Estadística'],
     links: []
   },
   {
-    title: 'Desarrollador Freelance',
-    company: 'Proyectos Independientes',
-    location: 'Santiago, Chile',
     period: '2023 - Presente',
+    role: 'Desarrollador Freelance',
+    company: 'Independiente',
+    location: 'Remoto',
     type: 'Freelance',
-    description: 'Desarrollo de soluciones web personalizadas para diversos clientes. Especializado en landing pages, sistemas de gestión y aplicaciones web modernas con enfoque en UX/UI.',
+    description: 'Desarrollo de proyectos web personalizados para diversos clientes.',
     responsibilities: [
-      'Desarrollo de landing pages profesionales',
-      'Sistemas de organización de pedidos',
-      'Diseño e implementación de interfaces modernas',
-      'Optimización SEO y rendimiento web',
-      'Despliegue y mantenimiento en la nube'
+      'Landing pages profesionales',
+      'Sistemas de gestión de pedidos',
+      'Integración con Servicios de Pago',
+      'Diseño UI/UX responsive'
     ],
-    skills: ['Astro', 'React', 'Next.js', 'Tailwind CSS', 'Vercel', 'SEO'],
-    icon: 'freelance',
-   
+    skills: ['Astro', 'React', 'Next.js', 'Tailwind CSS', 'Vercel'],
+    links: [
+    ]
   }
 ];
 
-const icons: Record<string, string> = {
-  building: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/></svg>`,
-  code: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>`,
-  academic: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>`,
-  freelance: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/></svg>`
+const typeColors: Record<string, string> = {
+  'Profesional': 'type-professional',
+  'Académico': 'type-academic',
+  'Freelance': 'type-freelance'
 };
 ---
 
 <section id="experiencia" class="experience section">
   <div class="container">
     <div class="section-header">
-      <span class="section-label">Experiencia</span>
-      <h2 class="section-title">
-        Mi <span class="gradient-text">Trayectoria</span>
+      <span class="section-label" data-animate="fade-up">Trayectoria</span>
+      <h2 class="section-title" data-animate="fade-up" data-delay="100">
+        Mi <span class="gradient-text">Experiencia</span>
       </h2>
-      <p class="section-description">
-        Experiencia académica y profesional que ha formado mis habilidades
+      <p class="section-description" data-animate="fade-up" data-delay="200">
+        Un recorrido por mi desarrollo profesional y académico
       </p>
     </div>
     
     <div class="timeline">
       {experiences.map((exp, index) => (
-        <div class="timeline-item" style={`--delay: ${index * 0.15}s`}>
+        <div 
+          class="timeline-item"
+          data-animate={index % 2 === 0 ? "fade-right" : "fade-left"}
+          data-delay={String((index + 1) * 150)}
+        >
           <div class="timeline-marker">
-            <div class="timeline-icon" set:html={icons[exp.icon]} />
+            <div class="marker-dot"></div>
           </div>
           
           <div class="timeline-card card">
-            <div class="timeline-header">
-              <div class="timeline-badge" data-type={exp.type.toLowerCase()}>
-                {exp.type}
-              </div>
-              <span class="timeline-period">{exp.period}</span>
+            <div class="card-header">
+              <span class={`type-badge ${typeColors[exp.type]}`}>{exp.type}</span>
+              <span class="period">{exp.period}</span>
             </div>
             
-            <h3 class="timeline-title">{exp.title}</h3>
-            
-            <div class="timeline-company">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M3 21h18"/>
-                <path d="M5 21V7l8-4v18"/>
-                <path d="M19 21V11l-6-4"/>
-                <path d="M9 9v.01"/>
-                <path d="M9 12v.01"/>
-                <path d="M9 15v.01"/>
-                <path d="M9 18v.01"/>
-              </svg>
-              <span>{exp.company}</span>
-              <span class="separator">•</span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
-                <circle cx="12" cy="10" r="3"/>
-              </svg>
-              <span>{exp.location}</span>
+            <h3 class="role">{exp.role}</h3>
+            <div class="company-info">
+              <span class="company">{exp.company}</span>
+              <span class="location">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+                {exp.location}
+              </span>
             </div>
             
-            <p class="timeline-description">{exp.description}</p>
+            <p class="description">{exp.description}</p>
             
-            <div class="timeline-responsibilities">
-              <h4>Responsabilidades:</h4>
-              <ul>
-                {exp.responsibilities.map((resp) => (
-                  <li>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <polyline points="20 6 9 17 4 12"/>
-                    </svg>
-                    {resp}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            
-            <div class="timeline-skills">
-              {exp.skills.map((skill) => (
-                <span class="skill-tag">{skill}</span>
+            <ul class="responsibilities">
+              {exp.responsibilities.map((item) => (
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="20,6 9,17 4,12"/>
+                  </svg>
+                  {item}
+                </li>
               ))}
-            </div>
+            </ul>
             
-          
+            <div class="card-footer">
+              <div class="skills-tags">
+                {exp.skills.map((skill) => (
+                  <span class="skill-tag">{skill}</span>
+                ))}
+              </div>
+              
+             
+            </div>
           </div>
         </div>
       ))}
+      
+      <div class="timeline-line"></div>
     </div>
   </div>
 </section>
@@ -184,102 +171,96 @@ const icons: Record<string, string> = {
     margin: 0 auto;
   }
   
-  .timeline::before {
-    content: '';
+  .timeline-line {
     position: absolute;
-    left: 28px;
+    left: 50%;
     top: 0;
     bottom: 0;
     width: 2px;
-    background: linear-gradient(
-      to bottom,
-      var(--color-accent-primary),
-      var(--color-accent-secondary),
-      var(--color-accent-tertiary),
-      var(--color-accent-primary)
-    );
-    border-radius: 1px;
+    background: linear-gradient(to bottom, var(--color-accent-primary), var(--color-accent-secondary), var(--color-accent-tertiary));
+    transform: translateX(-50%);
+    border-radius: 2px;
   }
   
   .timeline-item {
     position: relative;
-    padding-left: 80px;
-    padding-bottom: 3rem;
-    animation: fadeInUp 0.6s ease forwards;
-    animation-delay: var(--delay, 0s);
-    opacity: 0;
+    width: 50%;
+    padding: 0 2.5rem 3rem;
   }
   
-  .timeline-item:last-child {
-    padding-bottom: 0;
+  .timeline-item:nth-child(odd) {
+    margin-left: 50%;
+    padding-left: 2.5rem;
+    padding-right: 0;
+  }
+  
+  .timeline-item:nth-child(even) {
+    margin-right: 50%;
+    padding-right: 2.5rem;
+    padding-left: 0;
+    text-align: right;
+  }
+  
+  .timeline-item:nth-child(even) .timeline-card {
+    text-align: left;
+  }
+  
+  .timeline-item:nth-child(even) .card-header {
+    flex-direction: row-reverse;
+  }
+  
+  .timeline-item:nth-child(even) .skills-tags {
+    justify-content: flex-start;
   }
   
   .timeline-marker {
     position: absolute;
-    left: 0;
     top: 0;
-    width: 58px;
-    height: 58px;
+    width: 20px;
+    height: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 2;
+  }
+  
+  .timeline-item:nth-child(odd) .timeline-marker {
+    left: -10px;
+  }
+  
+  .timeline-item:nth-child(even) .timeline-marker {
+    right: -10px;
+  }
+  
+  .marker-dot {
+    width: 16px;
+    height: 16px;
     background: var(--color-bg-primary);
-    border: 2px solid var(--color-accent-primary);
+    border: 3px solid var(--color-accent-primary);
     border-radius: 50%;
-    z-index: 1;
     transition: all var(--transition-fast);
   }
   
-  .timeline-item:hover .timeline-marker {
-    border-color: var(--color-accent-secondary);
-    box-shadow: 0 0 20px rgba(124, 58, 237, 0.3);
-  }
-  
-  .timeline-icon {
-    color: var(--color-accent-primary);
-    transition: color var(--transition-fast);
-  }
-  
-  .timeline-item:hover .timeline-icon {
-    color: var(--color-accent-secondary);
+  .timeline-item:hover .marker-dot {
+    transform: scale(1.3);
+    background: var(--color-accent-primary);
+    box-shadow: 0 0 20px var(--color-accent-primary);
   }
   
   .timeline-card {
-    position: relative;
+    padding: 1.75rem;
   }
   
-  .timeline-card::before {
-    content: '';
-    position: absolute;
-    left: -22px;
-    top: 20px;
-    width: 0;
-    height: 0;
-    border: 10px solid transparent;
-    border-right-color: var(--color-border);
-  }
-  
-  .timeline-card::after {
-    content: '';
-    position: absolute;
-    left: -20px;
-    top: 21px;
-    width: 0;
-    height: 0;
-    border: 9px solid transparent;
-    border-right-color: var(--color-bg-card);
-  }
-  
-  .timeline-header {
+  .card-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 1rem;
     margin-bottom: 1rem;
     flex-wrap: wrap;
-    gap: 0.5rem;
   }
   
-  .timeline-badge {
+  .type-badge {
     padding: 0.25rem 0.75rem;
     font-size: 0.75rem;
     font-weight: 600;
@@ -288,127 +269,115 @@ const icons: Record<string, string> = {
     border-radius: 50px;
   }
   
-  .timeline-badge[data-type="académico"] {
-    background: rgba(124, 58, 237, 0.15);
-    color: var(--color-accent-secondary);
-    border: 1px solid rgba(124, 58, 237, 0.3);
-  }
-  
-  .timeline-badge[data-type="profesional"] {
+  .type-professional {
     background: rgba(16, 185, 129, 0.15);
     color: var(--color-accent-tertiary);
     border: 1px solid rgba(16, 185, 129, 0.3);
   }
   
-  .timeline-badge[data-type="freelance"] {
+  .type-academic {
+    background: rgba(124, 58, 237, 0.15);
+    color: var(--color-accent-secondary);
+    border: 1px solid rgba(124, 58, 237, 0.3);
+  }
+  
+  .type-freelance {
     background: rgba(0, 212, 255, 0.15);
     color: var(--color-accent-primary);
     border: 1px solid rgba(0, 212, 255, 0.3);
   }
   
-  .timeline-period {
+  .period {
     font-family: var(--font-mono);
-    font-size: 0.875rem;
+    font-size: 0.8125rem;
     color: var(--color-text-muted);
   }
   
-  .timeline-title {
-    font-size: 1.5rem;
+  .role {
+    font-size: 1.25rem;
     font-weight: 600;
     color: var(--color-text-primary);
     margin-bottom: 0.5rem;
   }
   
-  .timeline-company {
+  .company-info {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    font-size: 0.9375rem;
-    color: var(--color-text-muted);
+    gap: 1rem;
     margin-bottom: 1rem;
     flex-wrap: wrap;
   }
   
-  .timeline-company svg {
+  .company {
+    font-weight: 500;
     color: var(--color-accent-primary);
-    flex-shrink: 0;
   }
   
-  .separator {
-    color: var(--color-border);
-  }
-  
-  .timeline-description {
-    color: var(--color-text-secondary);
-    margin-bottom: 1.5rem;
-    line-height: 1.7;
-  }
-  
-  .timeline-responsibilities {
-    margin-bottom: 1.5rem;
-  }
-  
-  .timeline-responsibilities h4 {
-    font-size: 0.875rem;
-    font-weight: 600;
-    color: var(--color-text-primary);
-    margin-bottom: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-  
-  .timeline-responsibilities ul {
-    list-style: none;
+  .location {
     display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
   }
   
-  .timeline-responsibilities li {
+  .description {
+    font-size: 0.9375rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+  }
+  
+  .responsibilities {
+    list-style: none;
+    margin-bottom: 1.25rem;
+  }
+  
+  .responsibilities li {
     display: flex;
     align-items: flex-start;
     gap: 0.5rem;
-    font-size: 0.9375rem;
+    font-size: 0.875rem;
     color: var(--color-text-secondary);
+    margin-bottom: 0.5rem;
   }
   
-  .timeline-responsibilities li svg {
-    color: var(--color-accent-tertiary);
+  .responsibilities svg {
     flex-shrink: 0;
-    margin-top: 0.125rem;
+    color: var(--color-accent-tertiary);
+    margin-top: 2px;
   }
   
-  .timeline-skills {
+  .card-footer {
     display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
-  }
-  
-  .skill-tag {
-    padding: 0.25rem 0.75rem;
-    background: var(--color-bg-tertiary);
-    border-radius: 50px;
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    color: var(--color-text-secondary);
-    transition: all var(--transition-fast);
-  }
-  
-  .skill-tag:hover {
-    color: var(--color-accent-primary);
-    background: rgba(0, 212, 255, 0.1);
-  }
-  
-  .timeline-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-    padding-top: 0.5rem;
+    flex-direction: column;
+    gap: 1rem;
+    padding-top: 1rem;
     border-top: 1px solid var(--color-border);
   }
   
-  .timeline-link {
+  .skills-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  .skill-tag {
+    padding: 0.25rem 0.625rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    background: var(--color-bg-tertiary);
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    color: var(--color-text-secondary);
+  }
+  
+  .links {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .link {
     display: inline-flex;
     align-items: center;
     gap: 0.375rem;
@@ -418,44 +387,35 @@ const icons: Record<string, string> = {
     transition: all var(--transition-fast);
   }
   
-  .timeline-link:hover {
-    color: var(--color-accent-secondary);
-  }
-  
-  .timeline-link svg {
-    transition: transform var(--transition-fast);
-  }
-  
-  .timeline-link:hover svg {
-    transform: translate(2px, -2px);
+  .link:hover {
+    text-decoration: underline;
   }
   
   @media (max-width: 768px) {
-    .timeline::before {
+    .timeline-line {
       left: 20px;
     }
     
-    .timeline-item {
-      padding-left: 60px;
+    .timeline-item,
+    .timeline-item:nth-child(odd),
+    .timeline-item:nth-child(even) {
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+      padding-left: 50px;
+      padding-right: 0;
+      text-align: left;
     }
     
-    .timeline-marker {
-      width: 42px;
-      height: 42px;
+    .timeline-item:nth-child(even) .card-header {
+      flex-direction: row;
     }
     
-    .timeline-icon svg {
-      width: 20px;
-      height: 20px;
-    }
-    
-    .timeline-card::before,
-    .timeline-card::after {
-      display: none;
-    }
-    
-    .timeline-title {
-      font-size: 1.25rem;
+    .timeline-marker,
+    .timeline-item:nth-child(odd) .timeline-marker,
+    .timeline-item:nth-child(even) .timeline-marker {
+      left: 10px;
+      right: auto;
     }
   }
 </style>

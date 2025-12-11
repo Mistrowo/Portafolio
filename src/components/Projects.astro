@@ -1,137 +1,139 @@
 ---
 const projects = [
-  // Proyectos Públicos Destacados
+  {
+    title: 'Customizador OHFFICE',
+    description: 'Plataforma de personalización de mobiliario de oficina con visualización en tiempo real y generación de cotizaciones.',
+    category: 'Profesional',
+    image: '🪑',
+    tech: ['Laravel', 'Vue.js', 'PostgreSQL', 'Tailwind'],
+    liveUrl: 'https://customizador.ohffice.cl',
+    githubUrl: null,
+    featured: true
+  },
+  {
+    title: 'Herrajes ILESA',
+    description: 'Sistema de gestión de herrajes y órdenes de compra para proveedores con control de inventario.',
+    category: 'Profesional',
+    image: '🔩',
+    tech: ['Laravel', 'Blade', 'MySQL', 'Bootstrap'],
+    liveUrl: null,
+    githubUrl: null,
+    featured: true
+  },
+ 
   {
     title: 'Evaluación Pensamiento Crítico',
-    description: 'Sistema que implementa IA para evaluar diferentes actividades enfocadas en el pensamiento crítico. Utiliza modelos de lenguaje para análisis y feedback automatizado.',
-    tech: ['JavaScript', 'IA', 'NLP', 'Node.js'],
-    github: 'https://github.com/Mistrowo/Evaluacion-Pensamiento-critico',
-    featured: true,
-    isPrivate: false,
-    icon: 'brain'
+    description: 'Sistema de IA para análisis y evaluación automática de respuestas con procesamiento de lenguaje natural.',
+    category: 'Personal',
+    image: '🧠',
+    tech: ['JavaScript', 'NLP', 'Node.js', 'OpenAI'],
+    liveUrl: null,
+    githubUrl: 'https://github.com/Mistrowo',
+    featured: true
   },
   {
-    title: 'Herrajes Producción',
-    description: 'Sistema empresarial que permite calcular los herrajes asociados a diferentes productos, generando automáticamente las órdenes de compra asociadas.',
-    tech: ['Laravel', 'Blade', 'MySQL', 'PHP'],
-    github: 'https://github.com/Mistrowo/Herrajes-Produccion',
-    featured: true,
-    isPrivate: false,
-    icon: 'factory'
+    title: 'OHFFICE Web',
+    description: 'Sitio web corporativo con catálogo de productos y sistema de contacto.',
+    category: 'Profesional',
+    image: '🌐',
+    tech: ['HTML', 'CSS', 'JavaScript', 'PHP'],
+    liveUrl: 'https://ohffice.cl',
+    githubUrl: null,
+    featured: false
   },
   {
-    title: 'Herrajes Instaladores',
-    description: 'Plataforma de gestión para instaladores de herrajes. Control de inventario, asignaciones y seguimiento de instalaciones.',
-    tech: ['Laravel', 'Blade', 'Bootstrap', 'MySQL'],
-    github: 'https://github.com/Mistrowo/Herrajes-instaladores',
-    featured: true,
-    isPrivate: false,
-    icon: 'tools'
+    title: 'Sistema de Pedidos',
+    description: 'Aplicación de gestión y seguimiento de órdenes para pequeños negocios.',
+    category: 'Freelance',
+    image: '📦',
+    tech: ['React', 'Node.js', 'MongoDB', 'Express'],
+    liveUrl: null,
+    githubUrl: null,
+    featured: false,
+    private: true
   },
   {
     title: 'Motor de Búsqueda',
-    description: 'Motor de búsqueda personalizado con indexación y ranking de resultados. Implementa algoritmos de relevancia y búsqueda full-text.',
-    tech: ['PHP', 'MySQL', 'Algoritmos', 'Full-text Search'],
-    github: 'https://github.com/Mistrowo/MOTOR-DE-BUSQUEDA',
-    featured: false,
-    isPrivate: false,
-    icon: 'search'
+    description: 'Motor de búsqueda personalizado con indexación y ranking de documentos.',
+    category: 'Académico',
+    image: '🔍',
+    tech: ['PHP', 'MySQL', 'Algoritmos', 'TF-IDF'],
+    liveUrl: null,
+    githubUrl: 'https://github.com/Mistrowo',
+    featured: false
   },
   {
-    title: 'Sistema de Agenda',
-    description: 'Aplicación de gestión de agenda con calendario, recordatorios y gestión de contactos. Interfaz limpia con CSS puro.',
-    tech: ['Laravel', 'Blade', 'CSS', 'JavaScript'],
-    github: 'https://github.com/Mistrowo/Sistema-de-Agenda',
-    featured: false,
-    isPrivate: false,
-    icon: 'calendar'
-  },
-  {
-    title: 'Inteligencia Artificial UDP',
-    description: 'Repositorio con tareas y proyectos del curso de IA (2022-2). Implementaciones de algoritmos de ML, búsqueda y optimización.',
-    tech: ['Python', 'Jupyter', 'NumPy', 'Pandas'],
-    github: 'https://github.com/Mistrowo/Inteligencia-Artifical-UDP',
-    featured: false,
-    isPrivate: false,
-    icon: 'ai'
-  },
-  {
-    title: 'API Backend NestJS',
-    description: 'API REST completa desarrollada con NestJS, implementando autenticación JWT, validaciones, y conexión a PostgreSQL con TypeORM.',
-    tech: ['NestJS', 'TypeScript', 'PostgreSQL', 'JWT'],
-    github: null,
-    featured: false,
-    isPrivate: true,
-    icon: 'api'
-  },
-  {
-    title: 'Dashboard React + Astro',
-    description: 'Dashboard administrativo moderno construido con React y Astro para máximo rendimiento. Incluye gráficos, reportes y gestión de usuarios.',
-    tech: ['React', 'Astro', 'Tailwind', 'Chart.js'],
-    github: null,
-    featured: false,
-    isPrivate: true,
-    icon: 'dashboard'
+    title: 'Proyectos IA - UDP',
+    description: 'Colección de proyectos de machine learning y deep learning del curso de IA.',
+    category: 'Académico',
+    image: '🤖',
+    tech: ['Python', 'TensorFlow', 'Jupyter', 'Pandas'],
+    liveUrl: null,
+    githubUrl: 'https://github.com/Mistrowo',
+    featured: false
   }
 ];
 
-const icons: Record<string, string> = {
-  brain: `<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 4.5a2.5 2.5 0 0 0-4.96-.46 2.5 2.5 0 0 0-1.98 3 2.5 2.5 0 0 0-1.32 4.24 3 3 0 0 0 .34 5.58 2.5 2.5 0 0 0 2.96 3.08A2.5 2.5 0 0 0 12 19.5a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.98-3A2.5 2.5 0 0 0 12 4.5"/></svg>`,
-  factory: `<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 20h20"/><path d="M5 20V8l5 4V8l5 4V4h4v16"/><path d="M3 20v-2h2v2"/></svg>`,
-  tools: `<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>`,
-  search: `<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>`,
-  calendar: `<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>`,
-  ai: `<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2a4 4 0 0 1 4 4v2a4 4 0 0 1-8 0V6a4 4 0 0 1 4-4z"/><path d="M16 12h1a3 3 0 0 1 3 3v2a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3v-2a3 3 0 0 1 3-3h1"/><circle cx="9" cy="17" r="1"/><circle cx="15" cy="17" r="1"/></svg>`,
-  api: `<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 17L10 11 4 5"/><path d="M12 19H20"/></svg>`,
-  dashboard: `<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg>`
+const categoryColors: Record<string, string> = {
+  'Profesional': 'cat-professional',
+  'Freelance': 'cat-freelance',
+  'Personal': 'cat-personal',
+  'Académico': 'cat-academic'
 };
 ---
 
 <section id="proyectos" class="projects section">
   <div class="container">
     <div class="section-header">
-      <span class="section-label">Proyectos</span>
-      <h2 class="section-title">
-        Trabajos <span class="gradient-text">Destacados</span>
+      <span class="section-label" data-animate="fade-up">Portafolio</span>
+      <h2 class="section-title" data-animate="fade-up" data-delay="100">
+        Mis <span class="gradient-text">Proyectos</span>
       </h2>
-      <p class="section-description">
-        Una selección de proyectos profesionales y académicos que demuestran mis habilidades técnicas
+      <p class="section-description" data-animate="fade-up" data-delay="200">
+        Una selección de proyectos profesionales, freelance y personales
       </p>
     </div>
     
     <div class="projects-grid">
       {projects.map((project, index) => (
-        <article 
-          class={`project-card card ${project.featured ? 'featured' : ''} ${project.isPrivate ? 'private' : ''}`}
-          style={`--delay: ${index * 0.1}s`}
+        <div 
+          class={`project-card card ${project.featured ? 'featured' : ''}`}
+          data-animate="zoom-in"
+          data-delay={String((index % 4) * 100 + 100)}
         >
-          {project.isPrivate && (
-            <div class="private-badge">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 1C8.676 1 6 3.676 6 7v2H4v14h16V9h-2V7c0-3.324-2.676-6-6-6zm0 2c2.276 0 4 1.724 4 4v2H8V7c0-2.276 1.724-4 4-4zm0 10c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2z"/>
-              </svg>
-              Privado
+          <div class="card-top">
+            <span class={`category-badge ${categoryColors[project.category]}`}>
+              {project.category}
+            </span>
+            <div class="card-links">
+              {project.liveUrl && (
+                <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" class="card-link" title="Ver sitio">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                    <polyline points="15,3 21,3 21,9"/>
+                    <line x1="10" y1="14" x2="21" y2="3"/>
+                  </svg>
+                </a>
+              )}
+              {project.githubUrl && (
+                <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" class="card-link" title="Ver código">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                  </svg>
+                </a>
+              )}
+              {project.private && (
+                <span class="private-badge" title="Proyecto privado">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                  </svg>
+                </span>
+              )}
             </div>
-          )}
-          
-          <div class="project-header">
-            <div class="project-icon" set:html={icons[project.icon]} />
-            {!project.isPrivate && project.github && (
-              <a 
-                href={project.github} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                class="project-link"
-                aria-label={`Ver ${project.title} en GitHub`}
-              >
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-                  <polyline points="15 3 21 3 21 9"/>
-                  <line x1="10" y1="14" x2="21" y2="3"/>
-                </svg>
-              </a>
-            )}
           </div>
+          
+          <div class="project-icon">{project.image}</div>
           
           <h3 class="project-title">{project.title}</h3>
           <p class="project-description">{project.description}</p>
@@ -141,44 +143,21 @@ const icons: Record<string, string> = {
               <span class="tech-tag">{tech}</span>
             ))}
           </div>
-          
-          {!project.isPrivate && project.github ? (
-            <a 
-              href={project.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="project-cta"
-            >
-              Ver en GitHub
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M5 12h14M12 5l7 7-7 7"/>
-              </svg>
-            </a>
-          ) : (
-            <span class="project-cta private-cta">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 1C8.676 1 6 3.676 6 7v2H4v14h16V9h-2V7c0-3.324-2.676-6-6-6zm0 2c2.276 0 4 1.724 4 4v2H8V7c0-2.276 1.724-4 4-4z"/>
-              </svg>
-              Repositorio Privado
-            </span>
-          )}
-        </article>
+        </div>
       ))}
     </div>
     
-    <div class="projects-footer">
+    <div class="projects-footer" data-animate="fade-up" data-delay="400">
       <a 
         href="https://github.com/Mistrowo?tab=repositories" 
         target="_blank" 
         rel="noopener noreferrer"
         class="btn btn-secondary"
       >
-        Ver todos los repositorios (21)
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-          <polyline points="15 3 21 3 21 9"/>
-          <line x1="10" y1="14" x2="21" y2="3"/>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
         </svg>
+        Ver todos los repositorios
       </a>
     </div>
   </div>
@@ -186,23 +165,23 @@ const icons: Record<string, string> = {
 
 <style>
   .projects {
-    background: var(--color-bg-secondary);
     position: relative;
   }
   
   .projects::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--color-border), transparent);
+    top: 20%;
+    right: -200px;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(0, 212, 255, 0.08) 0%, transparent 70%);
+    pointer-events: none;
   }
   
   .projects-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 1.5rem;
     margin-bottom: 3rem;
   }
@@ -210,177 +189,121 @@ const icons: Record<string, string> = {
   .project-card {
     display: flex;
     flex-direction: column;
-    animation: fadeInUp 0.6s ease forwards;
-    animation-delay: var(--delay, 0s);
-    opacity: 0;
-    position: relative;
+    padding: 1.5rem;
+    height: 100%;
   }
   
   .project-card.featured {
-    border-color: rgba(0, 212, 255, 0.2);
+    grid-column: span 2;
   }
   
-  .project-card.featured::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: var(--color-accent-gradient);
-    border-radius: 16px 16px 0 0;
-  }
-  
-  .project-card.private {
-    border-color: rgba(124, 58, 237, 0.2);
-  }
-  
-  .project-card.private::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, #7c3aed, #a855f7);
-    border-radius: 16px 16px 0 0;
-  }
-  
-  .private-badge {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
+  .card-top {
     display: flex;
     align-items: center;
-    gap: 0.375rem;
-    padding: 0.25rem 0.625rem;
-    background: rgba(124, 58, 237, 0.15);
-    border: 1px solid rgba(124, 58, 237, 0.3);
-    border-radius: 50px;
-    font-size: 0.6875rem;
-    font-weight: 600;
-    color: #a855f7;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-  
-  .project-header {
-    display: flex;
     justify-content: space-between;
-    align-items: flex-start;
     margin-bottom: 1.25rem;
   }
   
-  .project-icon {
-    width: 56px;
-    height: 56px;
+  .category-badge {
+    padding: 0.25rem 0.625rem;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-radius: 4px;
+  }
+  
+  .cat-professional {
+    background: rgba(16, 185, 129, 0.15);
+    color: var(--color-accent-tertiary);
+  }
+  
+  .cat-freelance {
+    background: rgba(0, 212, 255, 0.15);
+    color: var(--color-accent-primary);
+  }
+  
+  .cat-personal {
+    background: rgba(124, 58, 237, 0.15);
+    color: var(--color-accent-secondary);
+  }
+  
+  .cat-academic {
+    background: rgba(245, 158, 11, 0.15);
+    color: #f59e0b;
+  }
+  
+  .card-links {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .card-link {
+    width: 36px;
+    height: 36px;
     display: flex;
     align-items: center;
     justify-content: center;
     background: var(--color-bg-tertiary);
-    border: 1px solid var(--color-border);
-    border-radius: 12px;
-    color: var(--color-accent-primary);
+    border-radius: 8px;
+    color: var(--color-text-secondary);
     transition: all var(--transition-fast);
   }
   
-  .project-card.private .project-icon {
-    color: #a855f7;
+  .card-link:hover {
+    background: var(--color-accent-primary);
+    color: var(--color-bg-primary);
+    transform: translateY(-2px);
   }
   
-  .project-card:hover .project-icon {
-    border-color: var(--color-accent-primary);
-    box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
-  }
-  
-  .project-card.private:hover .project-icon {
-    border-color: #a855f7;
-    box-shadow: 0 0 20px rgba(124, 58, 237, 0.2);
-  }
-  
-  .project-link {
-    width: 40px;
-    height: 40px;
+  .private-badge {
+    width: 36px;
+    height: 36px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--color-text-muted);
-    border: 1px solid var(--color-border);
+    background: rgba(245, 158, 11, 0.1);
     border-radius: 8px;
-    transition: all var(--transition-fast);
+    color: #f59e0b;
   }
   
-  .project-link:hover {
-    color: var(--color-accent-primary);
-    border-color: var(--color-accent-primary);
-    background: rgba(0, 212, 255, 0.05);
+  .project-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    line-height: 1;
   }
   
   .project-title {
-    font-size: 1.25rem;
+    font-size: 1.125rem;
     font-weight: 600;
     color: var(--color-text-primary);
-    margin-bottom: 0.75rem;
-    transition: color var(--transition-fast);
-  }
-  
-  .project-card:hover .project-title {
-    color: var(--color-accent-primary);
-  }
-  
-  .project-card.private:hover .project-title {
-    color: #a855f7;
+    margin-bottom: 0.5rem;
   }
   
   .project-description {
-    font-size: 0.9375rem;
+    font-size: 0.875rem;
     color: var(--color-text-muted);
+    line-height: 1.6;
     margin-bottom: 1.25rem;
     flex-grow: 1;
-    line-height: 1.6;
   }
   
   .project-tech {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-bottom: 1.5rem;
+    gap: 0.375rem;
+    margin-top: auto;
   }
   
   .tech-tag {
-    padding: 0.25rem 0.75rem;
-    background: var(--color-bg-tertiary);
-    border-radius: 50px;
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    color: var(--color-text-secondary);
-  }
-  
-  .project-cta {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.875rem;
+    padding: 0.1875rem 0.5rem;
+    font-size: 0.6875rem;
     font-weight: 500;
-    color: var(--color-accent-primary);
-    transition: all var(--transition-fast);
-  }
-  
-  .project-cta svg {
-    transition: transform var(--transition-fast);
-  }
-  
-  .project-cta:hover svg {
-    transform: translateX(4px);
-  }
-  
-  .private-cta {
-    color: #a855f7;
-    cursor: default;
-  }
-  
-  .private-cta:hover svg {
-    transform: none;
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    color: var(--color-text-secondary);
   }
   
   .projects-footer {
@@ -390,6 +313,10 @@ const icons: Record<string, string> = {
   @media (max-width: 1024px) {
     .projects-grid {
       grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .project-card.featured {
+      grid-column: span 1;
     }
   }
   
